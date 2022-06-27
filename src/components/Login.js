@@ -3,6 +3,10 @@ import { Redirect } from 'react-router-dom';
 import apiClient from '../services/api';
 import Music from './music';
 
+import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux';
+import FavorisList from './favorisList';
+
 const Login = (props) => {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
@@ -12,6 +16,10 @@ const Login = (props) => {
     const [authError, setAuthError] = React.useState(false);
     const [unknownError, setUnknownError] = React.useState(false);
     
+
+    const dispatch = useDispatch();
+    const favorisList =  useSelector((state) => state.todo)
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -35,11 +43,11 @@ const Login = (props) => {
     if (toHome === true) {
         return <Redirect to='/' />
     }
+
+    
     return (
         <>
             <h3>Search Music</h3>
-            
-
             
                 <form onSubmit={handleSubmit}>
                     <div className="row">
@@ -64,10 +72,21 @@ const Login = (props) => {
                         </div>
                     </div>
                 </form>
-                
-            
-                
+        
             <br/><br/>
+
+            <h3> Liste de vos favoris</h3>
+            <div className="row">
+                {
+                     favorisList.map((m) => <FavorisList favoris ={m} key={m.trackId}/>)
+                }
+                </div>
+
+            <hr/>
+
+            <h3> Resultat de vos recherche</h3>
+        
+        
             <div className="row">
                 {
                      music.map((m) => <Music uniquemusic ={m} key={m.trackId}/>)

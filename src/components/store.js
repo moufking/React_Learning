@@ -18,7 +18,7 @@ export const todoSlice = createSlice({
 
             }
 
-                state.push(newTask);
+                state.push(action.payload);
         },
 
         AddToFavoris: (state, action) => {
@@ -36,13 +36,20 @@ export const todoSlice = createSlice({
         deleteTask: (state, action) => {
             state = state.filter((t)=> t.id != action.payload)
             return state
+        },
+
+        deleteFavoris: (state, action)=> {
+            state = state.filter((t)=>  t.trackId != action.payload)
+
+            return state
+           
         }
 
     }
 })
 
 
-export const {onAddTask, deleteTask,AddToFavoris}  =  todoSlice.actions
+export const {onAddTask, deleteTask,AddToFavoris, deleteFavoris}  =  todoSlice.actions
 
 export default configureStore({
   reducer: {
