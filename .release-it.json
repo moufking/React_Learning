@@ -1,0 +1,13 @@
+{
+  "github": {
+    "release": true
+  },
+  "hooks": {
+    "before:init": ["git add .","git pull"],
+    "after:bump": "npx auto-changelog -p"
+  },
+
+  "git": {
+    "commitMessage": "chore: releasev${version}"
+  }
+}

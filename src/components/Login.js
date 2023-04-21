@@ -6,8 +6,11 @@ import Music from './music';
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux';
 import FavorisList from './favorisList';
+import { useTranslation } from "react-i18next";
+import Lang from './Lang';
 
 const Login = (props) => {
+    const { t } = useTranslation();
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [hashcode, setHashcode] = React.useState('');
@@ -74,6 +77,11 @@ const Login = (props) => {
                 </form>
         
             <br/><br/>
+
+            <Lang />
+        <p>{t('common.translated-text')}</p>
+
+        <br/>
 
             <h3> Liste de vos favoris</h3>
             <div className="row">
