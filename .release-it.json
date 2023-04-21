@@ -4,7 +4,7 @@
   },
   "hooks": {
     "before:init": ["git add .", "git commit -m 'f' ", "git pull"],
-    "after:bump": "npx auto-changelog -p"
+   // "after:bump": "npx auto-changelog -p"
   },
 
   "git": {
