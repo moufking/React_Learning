@@ -3,8 +3,7 @@
     "release": true
   },
   "hooks": {
-    "before:init": ["git add .", "git commit -m 'f' ", "git pull"],
-   // "after:bump": "npx auto-changelog -p"
+    "before:init": ["git add .", "git commit -m 'f' ", "git pull"]
   },
 
   "git": {
