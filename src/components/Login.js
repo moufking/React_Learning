@@ -51,7 +51,6 @@ const Login = (props) => {
     return (
         <>
             <h3>Search Music</h3>
-            
                 <form onSubmit={handleSubmit}>
                     <div className="row">
                         <div className="col-md-3 offset-md-3">

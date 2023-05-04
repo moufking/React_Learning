@@ -3,7 +3,7 @@
     "release": true
   },
   "hooks": {
-    "before:init": ["git add .", "git commit -m 'chore: releasev${version}' ", "git pull"]
+    "before:init": ["git add .", "git commit -m ' ' ", "git pull"]
   },
 
   "git": {
