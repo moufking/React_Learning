@@ -9,6 +9,7 @@ const Navbar = ({onDelete}) => (
                 <NavLink to="/completed" className="btn btn-outline-dark bg-light"><FaCheckSquare/></NavLink>
                 <NavLink to="/add_task" className="btn btn-outline-dark bg-light"  exact={true}> <FaPlusSquare/></NavLink>
                 <NavLink to="/login_mediactive" className="btn btn-outline-dark bg-light"  exact={true}> <FaKey/></NavLink>
+                <NavLink to="/formik-learning" className="btn btn-outline-dark bg-light"  exact={true}> <FaKey/></NavLink>
             </div>
             <button className='btn btn-outiline-dark bg-light' onClick={onDelete}><FaTrash/></button>
             

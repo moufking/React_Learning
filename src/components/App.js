@@ -7,6 +7,7 @@ import AddTask from './AddTask';
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import uniqueId from 'uniqueid';
 import Login from './Login';
+import { Form } from './form';
 
 
 
@@ -61,6 +62,7 @@ class App extends React.Component {
               <Switch>
                   <Route path="/add_task" render= {(props) => <AddTask />} />
                   <Route path="/login_mediactive" render= {(props) => <Login/>} />
+                  <Route path="/formik-learning" render= {(props) => <Form/>} />
                   <Route path="/:filter?" render={(props) => <ToDoList {...props} tasks={this.state.tasks} onToggleCompleted= {this.onToggleCompleted} />} />
               </Switch>
               <Navbar  onDelete = {this.onDelete}/>
